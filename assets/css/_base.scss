@@ -1,0 +1,81 @@
+@use "mixin" as *;
+
+
+html {
+	font-size: 16px;
+}
+body {
+	font-family: a-otf-ryumin-pr6n, serif;
+	color: #000;
+	background: #fff;
+}
+
+
+.inner {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+
+.sourcesans {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.ryumin {
+	font-family: a-otf-ryumin-pr6n, serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.aotf {
+	font-family: a-otf-gothic-bbb-pr6n, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.jun {
+	font-family: a-otf-jun-pro, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.sp {
+	display: none;
+}
+
+.pc {
+	display: block;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	transition: all 0.3s;
+}
+
+a:hover {
+	opacity: 0.5;
+}
+
+.none {
+  display: none!important;
+}
+
+.container {
+  max-width: 1200px;
+  @include center;
+  @include pc {
+    max-width: calc(1200vw / (1280 / 100));
+  }
+  @include tab {
+    max-width: 96%;
+  }
+}
