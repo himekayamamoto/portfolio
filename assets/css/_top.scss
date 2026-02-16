@@ -19,13 +19,13 @@
     pointer-events: none;
   }
 
-  &-inner {
+  &__inner {
     position: relative;
     z-index: 1;
     max-width: 900px;
   }
 
-  &-title {
+  &__title {
     font-family: "Syne", sans-serif;
     font-weight: 800;
     font-size: clamp(2rem, 6vw, 4rem);
@@ -47,7 +47,7 @@
     }
   }
 
-  &-subtitle {
+  &__subtitle {
     font-family: "Syne", sans-serif;
     font-weight: 600;
     font-size: clamp(0.875rem, 2.2vw, 1.125rem);

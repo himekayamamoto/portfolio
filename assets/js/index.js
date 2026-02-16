@@ -5,7 +5,7 @@
 function init() {
   // ハンバーガーメニュー：開閉
   var header = document.querySelector('.header');
-  var toggle = document.querySelector('.nav-toggle');
+  var toggle = document.querySelector('.nav__toggle');
   var nav = document.getElementById('nav-menu');
   if (header && toggle && nav) {
     function openMenu() {

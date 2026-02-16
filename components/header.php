@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="<?php echo $path; ?>assets/css/style.css">
 
   <?php if (file_exists(__DIR__ . '/../assets/img/favicon.png')): ?>
-  <link rel="icon" href="<?php echo $path; ?>assets/img/favicon.png">
-  <link rel="apple-touch-icon" href="<?php echo $path; ?>assets/img/favicon.png">
+    <link rel="icon" href="<?php echo $path; ?>assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="<?php echo $path; ?>assets/img/favicon.png">
   <?php endif; ?>
   <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="山本妃夏のポートフォリオ">
@@ -24,13 +24,13 @@
 </head>
 
 <header class="header">
-  <div class="header-inner">
-    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="メニューを開く">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
+  <div class="header__inner">
+    <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="メニューを開く">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
     </button>
-    <nav id="nav-menu" class="nav-menu" aria-hidden="true">
+    <nav id="nav-menu" class="nav__menu" aria-hidden="true">
       <ul>
         <li><a href="<?php echo $path; ?>index.php#top">Home</a></li>
         <li><a href="<?php echo $path; ?>index.php#about">About</a></li>
@@ -43,4 +43,3 @@
 </header>
 
 <body>
-
