@@ -1,5 +1,6 @@
 <?php
 $path = './';
+session_start();
 include $path . 'components/header.php'; ?>
 <main>
   <section class="top" id="top">
@@ -143,10 +144,8 @@ include $path . 'components/header.php'; ?>
   <section class="contact" id="contact">
     <h2>Contact</h2>
     <p>お問い合わせはこちらから</p>
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="お名前">
-      <input type="email" name="email" placeholder="メールアドレス">
-      <textarea name="message" placeholder="メッセージ"></textarea>
+
+    <?php include $path . 'php_mailer/form.php'; ?>
   </section>
 </main>
 <?php include $path . 'components/footer.php'; ?>

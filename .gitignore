@@ -1,0 +1,9 @@
+# 環境変数（パスワード等を含むためリポジトリに含めない）
+.env
+php_mailer/.env
+
+# Composer
+php_mailer/vendor/
+
+# ビルド成果物
+*.css.map

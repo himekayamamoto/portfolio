@@ -1,0 +1,307 @@
+@use "../mixin" as *;
+.form {
+  color:  #3a3a3a;
+  font-size: 22px;
+
+  .error {
+    display: block;
+    position: absolute;
+    top: 107%;
+    left: 24%;
+    width: 60%;
+    color: red;
+    box-sizing: border-box;
+    font-size: 16px;
+    @include pc {
+      font-size: calc(16vw / (1200 / 100));
+    }
+    @include tab {
+      left: 0;
+      font-size: calc(20vw / (768 / 100));
+    }
+  }
+  .hissu {
+    position: relative;
+    &::after {
+      content: "必須";
+      position: absolute;
+      left: 183px;
+      bottom: 3px;
+      padding: 6px 14px;
+      background-color: #edaad3;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 16px;
+      @include pc {
+        left: calc(183vw / (1200 / 100));
+        bottom: calc(3vw / (1200 / 100));
+        padding: calc(6vw / (1200 / 100)) calc(14vw / (1200 / 100));
+        border-radius: calc(10vw / (1200 / 100));
+        font-size: calc(16vw / (1200 / 100));
+      }
+      @include tab {
+        left: calc(250vw / (768 / 100));
+        bottom: calc(65vw / (768 / 100));
+        padding: calc(6vw / (768 / 100)) calc(14vw / (768 / 100));
+        border-radius: calc(5vw / (768 / 100));
+        font-size: calc(20vw / (768 / 100));
+      }
+      @include sp {
+        bottom: calc(48vw / (440 / 100));
+      }
+    }
+  }
+  &-select {
+    select {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid $pink;
+      @include pc {
+        padding: calc(8vw / (1200 / 100)) calc(12vw / (1200 / 100));
+      }
+      @include tab {
+        font-size: calc(29vw / (768 / 100));
+        padding: calc(12vw / (768 / 100)) calc(12vw / (768 / 100));
+        height: calc(59vw / (768 / 100));
+      }
+    }
+  }
+  &-box {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 40px 0;
+    gap: 0 100px;
+    @include pc {
+      margin: calc(40vw / (1200 / 100)) 0;
+      gap: 0 calc(100vw / (1200 / 100));
+    }
+    @include tab {
+      flex-direction: column;
+    }
+
+    &-content {
+      width: 591px;
+      @include pc {
+        width: calc(591vw / (1200 / 100));
+      }
+      @include tab {
+        width: 100%;
+        .mensetsu {
+          height: calc(59vw / (768 / 100));
+          text-align: left;
+        }
+      }
+    }
+    &-ttl {
+      width: 180px;
+      @include pc {
+        width: calc(180vw / (1200 / 100));
+      }
+      @include tab {
+        width: 100%;
+        padding: calc(8vw / (768 / 100)) 0;
+      }
+    }
+
+    label {
+      padding: 8px 0;
+      text-align: left;
+      font-size: 22px;
+      @include pc {
+        padding: calc(8vw / (1200 / 100)) 0;
+        font-size: calc(22vw / (1200 / 100));
+      }
+      @include tab {
+        font-size: calc(29vw / (768 / 100));
+      }
+
+      &-text {
+        width: 100px;
+        @include pc {
+          width: calc(100vw / (1200 / 100));
+        }
+        @include tab {
+          width: 100%;
+        }
+      }
+    }
+    input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid $pink;
+      border-radius: 10px;
+      @include pc {
+        padding: calc(8vw / (1200 / 100)) calc(12vw / (1200 / 100));
+      }
+      @include tab {
+        font-size: calc(29vw / (768 / 100));
+        padding: calc(12vw / (768 / 100)) calc(12vw / (768 / 100));
+      }
+    }
+  }
+  textarea {
+    height: 284px;
+    width: 100%;
+    padding: 8px 12px;
+    resize: none;
+    border: 1px solid $pink;
+    border-radius: 10px;
+    @include pc {
+      height: calc(284vw / (1200 / 100));
+      padding: calc(8vw / (1200 / 100)) calc(12vw / (1200 / 100));
+    }
+    @include tab {
+      height: calc(284vw / (768 / 100));
+      padding: calc(12vw / (768 / 100)) calc(12vw / (768 / 100));
+      font-size: calc(29vw / (768 / 100));
+    }
+  }
+
+  &-textarea {
+    align-items: flex-start;
+  }
+
+  &-submit {
+    position: relative;
+    margin-top: 104px;
+    padding-left: 283px;
+    @include pc {
+      margin-top: calc(104vw / (1200 / 100));
+      padding-left: calc(283vw / (1200 / 100));
+    }
+    @include tab {
+      margin-top: calc(104vw / (768 / 100));
+      padding-left: calc(190vw / (768 / 100));
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 590px;
+      width: 42px;
+      height: 34px;
+      transform: translateY(-50%);
+      @include pc {
+        left: calc(590vw / (1200 / 100));
+        width: calc(42vw / (1200 / 100));
+        height: calc(34vw / (1200 / 100));
+      }
+      @include tab {
+        left: calc(428vw / (768 / 100));
+      }
+      @include sp {
+        left: calc(278vw / (440 / 100));
+        width: calc(25vw / (440 / 100));
+        height: calc(20vw / (440 / 100));
+      }
+    }
+    input {
+      width: 38%;
+      padding: 10px 0;
+      font-size: 20px;
+      line-height: 1;
+      text-align: center;
+      background-color: $pink;
+      border-radius: 10px;
+      color: #fff;
+      @include pc {
+        padding: calc(20vw / (1200 / 100)) 0;
+        font-size: calc(20vw / (1200 / 100));
+        width: 30%;
+      }
+      @include tab {
+        font-size: calc(35vw / (768 / 100));
+        width: calc(327vw / (768 / 100));
+        padding: calc(22vw / (768 / 100)) 0;
+      }
+      @include sp {
+        padding: calc(12vw / (440 / 100)) 0;
+        font-size: calc(22vw / (440 / 100));
+      }
+    }
+  }
+
+  .box {
+    margin: 0 auto;
+    text-align: center;
+    .form-confirm {
+      display: inline-block;
+      padding: 50px 0;
+      line-height: 1.5;
+      text-align: center;
+      color: #000;
+      @include pc {
+        padding: calc(50vw / (1200 / 100)) 0;
+      }
+      @include tab {
+        font-size: calc(20vw / (768 / 100));
+        padding: calc(50vw / (768 / 100)) 0;
+      }
+      @include sp {
+        font-size: calc(20vw / (440 / 100));
+      }
+      h4 {
+        font-size: 28px;
+        padding-bottom: 10px;
+        @include pc {
+          font-size: calc(28vw / (1200 / 100));
+        }
+        @include tab {
+          font-size: calc(28vw / (768 / 100));
+        }
+        @include sp {
+          font-size: calc(28vw / (440 / 100));
+        }
+      }
+    }
+    .form-box-input {
+      color: $pink;
+    }
+  }
+}
+
+/********************************************
+* Now Loading
+********************************************/
+#form-load {
+  display: none;
+}
+.loader {
+  margin: 0 auto;
+  border: 12px solid #fafafa;
+  border-radius: 50%;
+  border-top: 12px solid #3498db;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.load1 {
+  animation: sk-scaleout 1s infinite ease-in-out;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  z-index: 201;
+  text-align: center;
+  background-color: #b1b1b1;
+  color: #ffffff;
+  opacity: 0.8;
+  width: 800px;
+  p {
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+  }
+}
