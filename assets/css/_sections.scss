@@ -159,80 +159,49 @@ section {
     display: inline-block;
   }
 
-  /* 共通：担当範囲ブロック */
-  &__scope {
-    margin-bottom: 3rem;
-    padding: 2rem 2rem 2rem 2.25rem;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(243, 180, 222, 0.18), 0 0 0 1px rgba(243, 180, 222, 0.2);
+  // コーディング／デザインのグループ分け
+  &__group {
+    & + & {
+      margin-top: 2.75rem;
+      padding-top: 2.75rem;
+      border-top: 1px solid rgba(243, 180, 222, 0.4);
+    }
   }
 
-  &__scope-title {
-    font-size: 1rem;
+  &__group-heading {
+    font-size: clamp(1rem, 2.4vw, 1.125rem);
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
+    margin: 0 0 1.35rem;
     color: #1a1a1a;
-    margin: 0 0 1.25rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 3px solid #f3b4de;
-    display: inline-block;
-  }
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
 
-  &__scope-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 0.9375rem;
-    line-height: 2;
-    color: #333;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.15rem 0;
-
-    @media (min-width: 600px) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.15rem 2rem;
-    }
-
-    li {
-      position: relative;
-      padding-left: 1.25em;
-
-      &::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: #f3b4de;
-        font-weight: bold;
-        font-size: 0.9em;
-      }
+    &::before {
+      content: "";
+      width: 4px;
+      height: 1.15em;
+      background: linear-gradient(180deg, #f3b4de, #e89cc8);
+      border-radius: 2px;
+      flex-shrink: 0;
     }
   }
 
-  /* 作品リスト */
+  // 作品リスト（サムネ＋本文を縦積み・1カード内でまとめる）
   &__list {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
+    max-width: min(100%, 680px);
+    margin-left: auto;
+    margin-right: auto;
 
     &:last-child {
       margin-bottom: 0;
     }
-
-    @include tab {
-      display: block;
-    }
-
-    @media (min-width: 769px) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.5rem;
-      margin-bottom: 2.5rem;
-      align-items: center;
-    }
   }
 
-  /* 作品カード */
-  &__item {
+  // 実績1件ごとの外枠（サムネ＋概要を一体表示）
+  &__card {
     background: #fff;
     border-radius: 20px;
     overflow: hidden;
@@ -245,12 +214,25 @@ section {
     }
 
     @include tab {
-      margin-bottom: 2rem;
       border-radius: 16px;
     }
   }
 
-  /* 作品サムネイル */
+  // 作品カード内サムネイル枠
+  &__item {
+    background: transparent;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+    transform: none;
+
+    &:hover {
+      box-shadow: none;
+      transform: none;
+    }
+  }
+
+  // 作品サムネイル
   &__item-img {
     aspect-ratio: 16/10;
     overflow: hidden;
@@ -301,7 +283,144 @@ section {
     }
   }
 
-  /* 作品テキスト */
+  // デザイン実績：サムネ＋モーダル用ボタン
+  &__item-img--design {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: visible;
+    background: #f5f5f5;
+  }
+
+  &__design-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &__design-visual-label {
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: #444;
+    margin: 0;
+    padding: 0.65rem 0.85rem;
+    background: rgba(243, 180, 222, 0.14);
+    border-bottom: 1px solid rgba(243, 180, 222, 0.35);
+    letter-spacing: 0.03em;
+  }
+
+  &__design-actions-block {
+    padding: 0.75rem 1rem 1rem;
+    background: #fff;
+    border-top: 1px solid rgba(243, 180, 222, 0.35);
+  }
+
+  &__design-actions-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #6b3a5c;
+    margin: 0 0 0.55rem;
+    text-align: center;
+  }
+
+  &__item-img-preview {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    position: relative;
+    line-height: 0;
+    background: #e8e8e8;
+
+    .works__design-btn--hero {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+      background: #ddd;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+        transition: transform 0.45s ease;
+        transform-origin: top center;
+      }
+    }
+  }
+
+  &__design-btn-hero-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.65rem 0.75rem 0.75rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 30%, transparent);
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-align: center;
+    line-height: 1.35;
+    pointer-events: none;
+  }
+
+  &__item--design:hover &__item-img-preview .works__design-btn--hero img {
+    transform: scale(1.04);
+  }
+
+  &__design-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+
+  &__design-btn {
+    appearance: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 0.55em 1.1em;
+    border-radius: 10px;
+    border: 2px solid #f3b4de;
+    background: rgba(243, 180, 222, 0.15);
+    color: #8b3d72;
+    transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+      background: #f3b4de;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(243, 180, 222, 0.45);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #c44a9e;
+      outline-offset: 2px;
+    }
+  }
+
+  &__item-note {
+    font-size: 0.8125rem !important;
+    color: #666 !important;
+    margin-bottom: 0.75rem !important;
+    letter-spacing: 0.04em;
+  }
+
+  // 作品テキスト
   &__item-text {
     padding: 1.75rem 1.5rem;
     border-top: 3px solid rgba(243, 180, 222, 0.25);
@@ -310,8 +429,8 @@ section {
       padding: 2rem 1.75rem;
     }
 
-    h3 {
-      font-size: 1.25rem;
+    .works__item-title {
+      font-size: 1.2rem;
       font-weight: 700;
       letter-spacing: 0.06em;
       margin: 0 0 0.75rem;
@@ -319,8 +438,8 @@ section {
       line-height: 1.3;
     }
 
-    p:first-of-type {
-      margin-bottom: 1rem;
+    .works__item-url {
+      margin: 0 0 1rem;
 
       a {
         display: inline-block;
@@ -342,6 +461,40 @@ section {
       }
     }
 
+    .works__item-meta-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #9a5c87;
+      margin: 0 0 0.5rem;
+    }
+
+    .works__item-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.5rem;
+      margin: 0 0 1.1rem;
+    }
+
+    .works__tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.35em 0.75em;
+      border-radius: 999px;
+      background: rgba(243, 180, 222, 0.18);
+      color: #6b3a5c;
+      border: 1px solid rgba(243, 180, 222, 0.45);
+      line-height: 1.3;
+
+      &--role {
+        background: linear-gradient(135deg, rgba(243, 180, 222, 0.45), rgba(232, 156, 200, 0.35));
+        color: #4a2a3d;
+        border-color: rgba(243, 180, 222, 0.65);
+      }
+    }
+
     p {
       font-size: 0.9375rem;
       line-height: 1.9;
@@ -358,5 +511,146 @@ section {
         }
       }
     }
+  }
+}
+
+/* ========== Works：デザインカンプ モーダル ========== */
+/* dialog に display:flex だけを当てると、閉じた後も none が上書きされ残るため [open] 時のみ flex */
+.works-modal {
+  padding: 0;
+  border: none;
+  border-radius: 16px;
+  max-width: min(920px, calc(100vw - 2rem));
+  width: 100%;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(243, 180, 222, 0.35);
+  background: #fff;
+
+  &[open] {
+    display: flex;
+    flex-direction: column;
+    max-height: min(90vh, 920px);
+  }
+
+  &:not([open]) {
+    display: none;
+  }
+
+  &::backdrop {
+    background: rgba(26, 26, 26, 0.55);
+    backdrop-filter: blur(2px);
+  }
+
+  &__chrome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1rem 0.65rem;
+    border-bottom: 2px solid rgba(243, 180, 222, 0.35);
+    flex-shrink: 0;
+    background: #fff;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #1a1a1a;
+    line-height: 1.3;
+    padding-right: 0.5rem;
+  }
+
+  &__close {
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: rgba(243, 180, 222, 0.25);
+    color: #1a1a1a;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease;
+
+    &:hover {
+      background: #f3b4de;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #c44a9e;
+      outline-offset: 2px;
+    }
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.75rem 1rem 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+
+  &__nav {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem 0.85rem;
+    border-top: 2px solid rgba(243, 180, 222, 0.35);
+    background: #fff;
+  }
+
+  &__nav-btn {
+    appearance: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    border: 2px solid #f3b4de;
+    background: rgba(243, 180, 222, 0.18);
+    color: #6b3a5c;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background: #f3b4de;
+      color: #fff;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #c44a9e;
+      outline-offset: 2px;
+    }
+  }
+
+  &__step {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #444;
+    letter-spacing: 0.03em;
+  }
+
+  &__step-label {
+    color: #666;
+    font-size: 0.8125rem;
+    font-weight: 500;
   }
 }

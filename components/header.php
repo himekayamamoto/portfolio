@@ -36,7 +36,6 @@
         <li><a href="<?php echo $path; ?>index.php#about">About</a></li>
         <li><a href="<?php echo $path; ?>index.php#skills">Skills</a></li>
         <li><a href="<?php echo $path; ?>index.php#works">Works</a></li>
-        <li><a href="<?php echo $path; ?>index.php#contact">Contact</a></li>
       </ul>
     </nav>
   </div>

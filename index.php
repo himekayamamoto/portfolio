@@ -1,6 +1,5 @@
 <?php
 $path = './';
-session_start();
 include $path . 'components/header.php'; ?>
 <main>
   <section class="top" id="top">
@@ -81,19 +80,11 @@ include $path . 'components/header.php'; ?>
   </section>
   <section class="works" id="works">
     <h2>Works</h2>
-    <div class="works__scope">
-      <p class="works__scope-title">共通：担当範囲</p>
-      <ul class="works__scope-list">
-        <li>デザインカンプをもとにしたコーディング</li>
-        <li>レスポンシブ対応</li>
-        <li>WordPress（オリジナルテーマ）構築</li>
-        <li>ACFを用いた更新機能の設計</li>
-        <li>非エンジニアでも更新しやすい管理画面設計</li>
-        <li>ドメイン取得、SSL化、メールアドレス設定</li>
-        <li>公開まで一人で担当</li>
-      </ul>
-    </div>
-    <div class="works__list">
+
+    <div class="works__group works__group--coding">
+      <h3 class="works__group-heading">コーディング</h3>
+      <div class="works__list works__list--coding">
+      <article class="works__card">
       <div class="works__item">
         <div class="works__item-img">
           <a href="https://izumimental.jp/" target="_blank">
@@ -102,8 +93,16 @@ include $path . 'components/header.php'; ?>
         </div>
       </div>
       <div class="works__item-text">
-        <h3>いずみがおかメンタルクリニック</h3>
-        <p><a href="https://izumimental.jp/" target="_blank">https://izumimental.jp/</a></p>
+        <h4 class="works__item-title">いずみがおかメンタルクリニック</h4>
+        <p class="works__item-url"><a href="https://izumimental.jp/" target="_blank">https://izumimental.jp/</a></p>
+        <p class="works__item-meta-label">担当・使用ツール</p>
+        <div class="works__item-meta">
+          <span class="works__tag works__tag--role">コーディング</span>
+          <span class="works__tag">HTML/CSS</span>
+          <span class="works__tag">WordPress</span>
+          <span class="works__tag">ACF</span>
+          <span class="works__tag">レスポンシブ</span>
+        </div>
         <p>
           医療機関の公式サイトとして、情報の分かりやすさと安心感を重視して制作しました。
           <br>
@@ -116,8 +115,10 @@ include $path . 'components/header.php'; ?>
           公開後の運用を見据えたサイト構築を行いました。
         </p>
       </div>
+      </article>
     </div>
-    <div class="works__list">
+    <div class="works__list works__list--coding">
+      <article class="works__card">
       <div class="works__item">
         <div class="works__item-img">
           <a href="https://brooklyndesign.jp/" target="_blank">
@@ -126,8 +127,17 @@ include $path . 'components/header.php'; ?>
         </div>
       </div>
       <div class="works__item-text">
-        <h3>BrooklynDesign</h3>
-        <p><a href="https://brooklyndesign.jp/" target="_blank">https://brooklyndesign.jp/</a></p>
+        <h4 class="works__item-title">BrooklynDesign</h4>
+        <p class="works__item-url"><a href="https://brooklyndesign.jp/" target="_blank">https://brooklyndesign.jp/</a></p>
+        <p class="works__item-meta-label">担当・使用ツール</p>
+        <div class="works__item-meta">
+          <span class="works__tag works__tag--role">コーディング</span>
+          <span class="works__tag">HTML/CSS</span>
+          <span class="works__tag">WordPress</span>
+          <span class="works__tag">ACF</span>
+          <span class="works__tag">GSAP</span>
+          <span class="works__tag">レスポンシブ</span>
+        </div>
         <p>
           企業サイトとしての情報整理に加え、表現面にも挑戦した制作事例です。
 
@@ -139,13 +149,67 @@ include $path . 'components/header.php'; ?>
           実務レベルで使用できる形に落とし込みました。
         </p>
       </div>
+      </article>
+    </div>
+    </div>
+
+    <div class="works__group works__group--design">
+      <h3 class="works__group-heading">デザイン</h3>
+      <div class="works__list works__list--design">
+      <article class="works__card">
+      <div class="works__item works__item--design">
+        <div class="works__item-img works__item-img--design">
+          <div class="works__design-visual" aria-describedby="design-lp-help">
+            <p class="works__design-visual-label" id="design-lp-help">縦長のカンプ全体は、下の画像またはボタンからモーダルで開けます（スクロール可）</p>
+            <div class="works__item-img-preview">
+              <button type="button" class="works__design-btn works__design-btn--hero" data-modal-src="<?php echo $path; ?>assets/images/fuyutabi-cut.png" data-modal-alt="ピカピカレイン #ピカピカレイン冬旅 LPデザインカンプ" data-modal-label="冬旅" aria-describedby="design-lp-help" aria-label="冬旅のLPカンプ全体をモーダルで表示する">
+                <img src="<?php echo $path; ?>assets/images/fuyutabi-cut.png" alt="" width="800" height="500" loading="lazy" decoding="async">
+                <span class="works__design-btn-hero-caption">カンプ全体を見る</span>
+              </button>
+            </div>
+            <div class="works__design-actions-block">
+              <div class="works__design-actions" role="group" aria-labelledby="design-lp-actions-label">
+                <button type="button" class="works__design-btn" data-modal-src="<?php echo $path; ?>assets/images/fuyutabi-cut.png" data-modal-alt="ピカピカレイン #ピカピカレイン冬旅 LPデザインカンプ" data-modal-label="冬旅">冬旅を表示</button>
+                <button type="button" class="works__design-btn" data-modal-src="<?php echo $path; ?>assets/images/harutabi-cut.png" data-modal-alt="ピカピカレイン #ピカピカレイン春旅 LPデザインカンプ" data-modal-label="春旅">春旅を表示</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="works__item-text">
+        <h4 class="works__item-title">SNSハッシュタグキャンペーン LPデザイン</h4>
+        <p class="works__item-meta-label">担当・使用ツール</p>
+        <div class="works__item-meta">
+          <span class="works__tag works__tag--role">デザイン</span>
+          <span class="works__tag">Photoshop</span>
+          <span class="works__tag">Illustrator</span>
+          <span class="works__tag">LP</span>
+          <span class="works__tag">SNSキャンペーン</span>
+        </div>
+        <p>
+          自動車用品のEC事業に在籍していた際の案件です。Instagram・X（旧Twitter）向けハッシュタグキャンペーンのLPとして、認知拡大と運用の厚みを目的に制作しました。
+        </p>
+        <p>
+          車を趣味とするアカウントは多い一方、事業側のPRがタイムライン上で十分に活きにくいという課題に対し、参加型で盛り上げる構成に。当選後はレビュー投稿まで促す流れも設計しました。季節ごとに約2年継続し、参加の規模は初回比でおおよそ3倍（約200%増）まで広がりました。季節違いのカンプ全体はモーダルからご覧いただけます。
+        </p>
+      </div>
+      </article>
+    </div>
     </div>
   </section>
-  <section class="contact" id="contact">
-    <h2>Contact</h2>
-    <p>お問い合わせはこちらから</p>
-
-    <?php include $path . 'php_mailer/form.php'; ?>
-  </section>
+  <dialog class="works-modal" id="works-design-modal" aria-modal="true" aria-labelledby="works-modal-heading">
+    <div class="works-modal__chrome">
+      <h2 id="works-modal-heading" class="works-modal__title">デザインカンプ</h2>
+      <button type="button" class="works-modal__close" aria-label="モーダルを閉じる">&times;</button>
+    </div>
+    <div class="works-modal__body">
+      <img class="works-modal__img" src="" alt="">
+    </div>
+    <div class="works-modal__nav" role="group" aria-label="カンプの切り替え">
+      <button type="button" class="works-modal__nav-btn works-modal__prev" aria-label="前のカンプへ">前へ</button>
+      <p class="works-modal__step" aria-live="polite"><span class="works-modal__step-current">1</span> / <span class="works-modal__step-total">2</span><span class="works-modal__step-label"></span></p>
+      <button type="button" class="works-modal__nav-btn works-modal__next" aria-label="次のカンプへ">次へ</button>
+    </div>
+  </dialog>
 </main>
 <?php include $path . 'components/footer.php'; ?>

@@ -95,6 +95,148 @@ function init() {
       setTimeout(startAnimation, 150);
     }
   }
+
+  // Works：デザインカンプ用モーダル（前へ／次えで切り替え）
+  var worksModal = document.getElementById('works-design-modal');
+  if (worksModal) {
+    var modalImg = worksModal.querySelector('.works-modal__img');
+    var modalTitle = worksModal.querySelector('.works-modal__title');
+    var closeBtn = worksModal.querySelector('.works-modal__close');
+    var prevBtn = worksModal.querySelector('.works-modal__prev');
+    var nextBtn = worksModal.querySelector('.works-modal__next');
+    var stepCurrentEl = worksModal.querySelector('.works-modal__step-current');
+    var stepTotalEl = worksModal.querySelector('.works-modal__step-total');
+    var stepLabelEl = worksModal.querySelector('.works-modal__step-label');
+    var modalBody = worksModal.querySelector('.works-modal__body');
+    var lastFocus = null;
+    var slides = [];
+    var currentIndex = 0;
+
+    function buildSlides() {
+      var seen = {};
+      slides = [];
+      document.querySelectorAll('.works__design-btn[data-modal-src]').forEach(function (btn) {
+        var src = btn.getAttribute('data-modal-src');
+        if (!src || seen[src]) return;
+        seen[src] = true;
+        slides.push({
+          src: src,
+          alt: btn.getAttribute('data-modal-alt') || '',
+          label: btn.getAttribute('data-modal-label') || ''
+        });
+      });
+    }
+
+    function findSlideIndexBySrc(src) {
+      for (var i = 0; i < slides.length; i++) {
+        if (slides[i].src === src) return i;
+      }
+      return 0;
+    }
+
+    function applySlide() {
+      if (!modalImg || slides.length === 0) return;
+      var s = slides[currentIndex];
+      modalImg.src = s.src;
+      modalImg.alt = s.alt;
+      if (modalTitle) {
+        modalTitle.textContent = s.label ? s.label + ' — カンプ' : 'デザインカンプ';
+      }
+      if (stepCurrentEl) stepCurrentEl.textContent = String(currentIndex + 1);
+      if (stepTotalEl) stepTotalEl.textContent = String(slides.length);
+      if (stepLabelEl) {
+        stepLabelEl.textContent = s.label ? '（' + s.label + '）' : '';
+      }
+      worksModal.setAttribute('aria-label', (s.label || 'カンプ') + 'の全体表示');
+      if (modalBody) modalBody.scrollTop = 0;
+    }
+
+    function showSlideAt(index) {
+      if (slides.length === 0) return;
+      currentIndex = (index + slides.length) % slides.length;
+      applySlide();
+    }
+
+    function openWorksModal(startIndex) {
+      if (!modalImg || slides.length === 0) return;
+      lastFocus = document.activeElement;
+      currentIndex = (startIndex + slides.length) % slides.length;
+      applySlide();
+      if (typeof worksModal.showModal === 'function') {
+        worksModal.showModal();
+      }
+    }
+
+    function closeWorksModal() {
+      if (typeof worksModal.close === 'function') {
+        worksModal.close();
+      }
+    }
+
+    buildSlides();
+
+    document.querySelectorAll('.works__design-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var src = btn.getAttribute('data-modal-src');
+        if (!src) return;
+        buildSlides();
+        openWorksModal(findSlideIndexBySrc(src));
+      });
+    });
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        showSlideAt(currentIndex - 1);
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        showSlideAt(currentIndex + 1);
+      });
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeWorksModal();
+      });
+    }
+
+    worksModal.addEventListener('click', function (e) {
+      if (e.target.closest('.works-modal__close')) return;
+      var rect = worksModal.getBoundingClientRect();
+      var inDialog =
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom;
+      if (!inDialog) {
+        closeWorksModal();
+      }
+    });
+
+    worksModal.addEventListener('keydown', function (e) {
+      if (!worksModal.open) return;
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        showSlideAt(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        showSlideAt(currentIndex + 1);
+      }
+    });
+
+    worksModal.addEventListener('close', function () {
+      if (modalImg) {
+        modalImg.removeAttribute('src');
+        modalImg.alt = '';
+      }
+      if (lastFocus && typeof lastFocus.focus === 'function') {
+        lastFocus.focus();
+      }
+    });
+  }
 }
 
 if (document.readyState === 'loading') {
