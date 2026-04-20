@@ -1,257 +1,376 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>山本妃夏のポートフォリオ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <meta name="description" content="山本妃夏のポートフォリオ" />
+    <meta
+      name="keywords"
+      content="山本妃夏,ポートフォリオ,山本妃夏のポートフォリオ"
+    />
+    <meta name="author" content="山本妃夏" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="googlebot" content="noindex, nofollow, noarchive" />
+    <meta name="google" content="notranslate" />
+    <meta name="theme-color" content="#fdf8fb" />
+    <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>山本妃夏のポートフォリオ</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <meta name="description" content="山本妃夏のポートフォリオ">
-  <meta name="keywords" content="山本妃夏,ポートフォリオ,山本妃夏のポートフォリオ">
-  <meta name="author" content="山本妃夏">
-  <meta name="robots" content="index, follow">
-  <meta name="google" content="notranslate">
-</head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <button
+          type="button"
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="メニューを開く"
+        >
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+        <nav id="nav-menu" class="nav__menu" aria-hidden="true">
+          <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#works">Works</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-<body>
-  <header class="header">
-    <div class="header__inner">
-      <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="メニューを開く">
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
-      </button>
-      <nav id="nav-menu" class="nav__menu" aria-hidden="true">
-        <ul>
-          <li><a href="#top">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#works">Works</a></li>
+    <main>
+      <section class="top" id="top">
+        <div class="top__inner">
+          <h1 class="top__title" id="top-title">
+            Himeka<br />Yamamoto's<br />Portfolio
+          </h1>
+          <p class="top__subtitle" id="top-subtitle">
+            Web Designer & Front-end Developer
+          </p>
+        </div>
+      </section>
+      <section class="hero" id="about">
+        <h2>About</h2>
+        <div class="hero__text">
+          <p>
+            Webサイトのコーディングを中心に、<br />
+            デザインカンプに基づいた企業サイト・LP・WordPressサイトの構築をしています。<br />
+          </p>
+          <p>
+            見た目の再現だけでなく「実際に使われること」を意識し、<br />
+            画面幅ごとの見え方や操作感を丁寧に調整することを心がけています。<br />
+            実務では、レスポンシブ対応・BEMを意識したCSS設計・アニメーション実装を通じて、<br />
+            保守しやすく運用しやすい構造づくりに取り組んできました。<br />
+          </p>
+          <p>
+            WordPressではオリジナルテーマの開発経験もあります。<br />
+            ACFを使用したカスタマイズも実装も経験しており、<br />
+            非エンジニアの方にも配慮したサイトづくりを心がけています。
+          </p>
+
+          <p>
+            また、自社業務システムの改修や新機能追加において、<br />
+            外注先と連携しながらフロントエンド部分の実装を担当してきました。<br />
+            仕様書をもとにしたコーディングや、<br />
+            実装観点からの改善提案を行うなど、<br />
+            チーム間の橋渡しを意識した業務にも取り組んでいます。
+          </p>
+          <p>
+            デザインやトレンドを取り入れつつ、<br />
+            利用者や更新者の負担が少ないサイトづくりを大切にしています。<br />
+            コーディングだけでなく、構造や運用面も含めて<br />
+            「長く使われるWebサイト」に関われる仕事を目指しています。
+          </p>
+        </div>
+      </section>
+      <section class="skills" id="skills">
+        <h2>Skills</h2>
+        <ul class="skills__list">
+          <li class="skill__item">
+            <span class="skill__name">HTML / CSS（SCSS）</span>
+            <ul class="skill__detail">
+              <li>BEMを意識したCSS設計</li>
+              <li>レスポンシブ対応</li>
+            </ul>
+          </li>
+          <li class="skill__item">
+            <span class="skill__name">Git</span>
+            <ul class="skill__detail">
+              <li>
+                少人数の体制ではありますが、CUI・GUIでのソース管理を行なっておりました
+              </li>
+            </ul>
+          </li>
+          <li class="skill__item">
+            <span class="skill__name">WordPress</span>
+            <ul class="skill__detail">
+              <li>オリジナルテーマから作成</li>
+              <li>ACFを使用したカスタマイズ等</li>
+            </ul>
+          </li>
+          <li class="skill__item">
+            <span class="skill__name">Adobe Illustrator / Photoshop</span>
+            <ul class="skill__detail">
+              <li>基本操作可能</li>
+              <li>画像の書き出しや簡単な修正</li>
+              <li>デザインデータを基にOGPの作成可能</li>
+            </ul>
+          </li>
+          <li class="skill__item">
+            <span class="skill__name">PHP</span>
+            <ul class="skill__detail">
+              <li>PhpStormを使用しての、基本的操作</li>
+            </ul>
+          </li>
         </ul>
-      </nav>
-    </div>
-  </header>
+      </section>
+      <section class="works" id="works">
+        <h2>Works</h2>
 
-  <main>
-    <section class="top" id="top">
-      <div class="top__inner">
-        <h1 class="top__title" id="top-title">Himeka<br>Yamamoto's<br>Portfolio</h1>
-        <p class="top__subtitle" id="top-subtitle">Web Designer & Front-end Developer</p>
-      </div>
-    </section>
-    <section class="hero" id="about">
-      <h2>About</h2>
-      <div class="hero__text">
-        <p>Webサイトのコーディングを中心に、<br>
-          デザインカンプに基づいた企業サイト・LP・WordPressサイトの構築をしています。<br>
-        </p>
-        <p>
-          見た目の再現だけでなく「実際に使われること」を意識し、<br>
-          画面幅ごとの見え方や操作感を丁寧に調整することを心がけています。<br>
-          実務では、レスポンシブ対応・BEMを意識したCSS設計・アニメーション実装を通じて、<br>
-          保守しやすく運用しやすい構造づくりに取り組んできました。<br>
-        </p>
-        <p>
-          WordPressではオリジナルテーマの開発経験もあります。<br>
-          ACFを使用したカスタマイズも実装も経験しており、<br>
-          非エンジニアの方にも配慮したサイトづくりを心がけています。</p>
-
-        <p>また、自社業務システムの改修や新機能追加において、<br>
-          外注先と連携しながらフロントエンド部分の実装を担当してきました。<br>
-          仕様書をもとにしたコーディングや、<br>
-          実装観点からの改善提案を行うなど、<br>
-          チーム間の橋渡しを意識した業務にも取り組んでいます。</p>
-        <p>
-          デザインやトレンドを取り入れつつ、<br>
-          利用者や更新者の負担が少ないサイトづくりを大切にしています。<br>
-          コーディングだけでなく、構造や運用面も含めて<br>
-          「長く使われるWebサイト」に関われる仕事を目指しています。</p>
-      </div>
-    </section>
-    <section class="skills" id="skills">
-      <h2>Skills</h2>
-      <ul class="skills__list">
-        <li class="skill__item">
-          <span class="skill__name">HTML / CSS（SCSS）</span>
-          <ul class="skill__detail">
-            <li>BEMを意識したCSS設計</li>
-            <li>レスポンシブ対応</li>
-          </ul>
-        </li>
-        <li class="skill__item">
-          <span class="skill__name">Git</span>
-          <ul class="skill__detail">
-            <li>少人数の体制ではありますが、CUI・GUIでのソース管理を行なっておりました</li>
-          </ul>
-        </li>
-        <li class="skill__item">
-          <span class="skill__name">WordPress</span>
-          <ul class="skill__detail">
-            <li>オリジナルテーマから作成</li>
-            <li>ACFを使用したカスタマイズ等</li>
-          </ul>
-        </li>
-        <li class="skill__item">
-          <span class="skill__name">Adobe Illustrator / Photoshop</span>
-          <ul class="skill__detail">
-            <li>基本操作可能</li>
-            <li>画像の書き出しや簡単な修正</li>
-            <li>デザインデータを基にOGPの作成可能</li>
-          </ul>
-        </li>
-        <li class="skill__item">
-          <span class="skill__name">PHP</span>
-          <ul class="skill__detail">
-            <li>PhpStormを使用しての、基本的操作</li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-    <section class="works" id="works">
-      <h2>Works</h2>
-
-      <div class="works__group works__group--coding">
-        <h3 class="works__group-heading">コーディング</h3>
-        <div class="works__list works__list--coding">
-          <article class="works__card">
-            <div class="works__item">
-              <div class="works__item-img">
-                <a href="https://izumimental.jp/" target="_blank">
-                  <img src="./assets/images/izumimental-ogp.jpg" alt="Work 2">
-                </a>
+        <div class="works__group works__group--coding">
+          <h3 class="works__group-heading">コーディング</h3>
+          <div class="works__list works__list--coding">
+            <article class="works__card">
+              <div class="works__item">
+                <div class="works__item-img">
+                  <a href="https://izumimental.jp/" target="_blank">
+                    <img
+                      src="./assets/images/izumimental-ogp.jpg"
+                      alt="Work 2"
+                    />
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="works__item-text">
-              <h4 class="works__item-title">いずみがおかメンタルクリニック</h4>
-              <p class="works__item-url"><a href="https://izumimental.jp/" target="_blank">https://izumimental.jp/</a></p>
-              <p class="works__item-meta-label">担当・使用ツール</p>
-              <div class="works__item-meta">
-                <span class="works__tag works__tag--role">コーディング</span>
-                <span class="works__tag">HTML/CSS</span>
-                <span class="works__tag">WordPress</span>
-                <span class="works__tag">ACF</span>
-                <span class="works__tag">レスポンシブ</span>
+              <div class="works__item-text">
+                <h4 class="works__item-title">
+                  いずみがおかメンタルクリニック
+                </h4>
+                <p class="works__item-url">
+                  <a href="https://izumimental.jp/" target="_blank"
+                    >https://izumimental.jp/</a
+                  >
+                </p>
+                <p class="works__item-meta-label">担当・使用ツール</p>
+                <div class="works__item-meta">
+                  <span class="works__tag works__tag--role">コーディング</span>
+                  <span class="works__tag">HTML/CSS</span>
+                  <span class="works__tag">WordPress</span>
+                  <span class="works__tag">ACF</span>
+                  <span class="works__tag">レスポンシブ</span>
+                </div>
+                <p>
+                  医療機関の公式サイトとして、情報の分かりやすさと安心感を重視して制作しました。
+                  <br />
+                  デザインカンプをもとに、レスポンシブ対応を含めたコーディングを担当し、
+                  WordPressのオリジナルテーマを作成しています。
+                  <br />
+                  ACFを使用し、非エンジニアの方でも無理なく更新できる構成を意識しました。
+                  <br />
+                  また、ドメイン取得・SSL化・メールアドレス設定まで一貫して対応し、
+                  公開後の運用を見据えたサイト構築を行いました。
+                </p>
               </div>
-              <p>
-                医療機関の公式サイトとして、情報の分かりやすさと安心感を重視して制作しました。
-                <br>
-                デザインカンプをもとに、レスポンシブ対応を含めたコーディングを担当し、
-                WordPressのオリジナルテーマを作成しています。
-                <br>
-                ACFを使用し、非エンジニアの方でも無理なく更新できる構成を意識しました。
-                <br>
-                また、ドメイン取得・SSL化・メールアドレス設定まで一貫して対応し、
-                公開後の運用を見据えたサイト構築を行いました。
-              </p>
-            </div>
-          </article>
+            </article>
+          </div>
+          <div class="works__list works__list--coding">
+            <article class="works__card">
+              <div class="works__item">
+                <div class="works__item-img">
+                  <a href="https://brooklyndesign.jp/" target="_blank">
+                    <img
+                      src="./assets/images/brooklyndesign-ogp.png"
+                      alt="Work 2"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="works__item-text">
+                <h4 class="works__item-title">BrooklynDesign</h4>
+                <p class="works__item-url">
+                  <a href="https://brooklyndesign.jp/" target="_blank"
+                    >https://brooklyndesign.jp/</a
+                  >
+                </p>
+                <p class="works__item-meta-label">担当・使用ツール</p>
+                <div class="works__item-meta">
+                  <span class="works__tag works__tag--role">コーディング</span>
+                  <span class="works__tag">HTML/CSS</span>
+                  <span class="works__tag">WordPress</span>
+                  <span class="works__tag">ACF</span>
+                  <span class="works__tag">GSAP</span>
+                  <span class="works__tag">レスポンシブ</span>
+                </div>
+                <p>
+                  企業サイトとしての情報整理に加え、表現面にも挑戦した制作事例です。
+                  基本的な構成やWordPress設計は他案件と同様ですが、
+                  本案件では初めてパララックス表現やGSAPを用いたアニメーション実装に取り組みました。
+                  動きを取り入れつつも、過度にならないよう表示速度や操作感を意識しています。
+                  新しい技術についても、公式ドキュメントや実装例を調べながら導入し、
+                  実務レベルで使用できる形に落とし込みました。
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
-        <div class="works__list works__list--coding">
-          <article class="works__card">
-            <div class="works__item">
-              <div class="works__item-img">
-                <a href="https://brooklyndesign.jp/" target="_blank">
-                  <img src="./assets/images/brooklyndesign-ogp.png" alt="Work 2">
-                </a>
-              </div>
-            </div>
-            <div class="works__item-text">
-              <h4 class="works__item-title">BrooklynDesign</h4>
-              <p class="works__item-url"><a href="https://brooklyndesign.jp/" target="_blank">https://brooklyndesign.jp/</a></p>
-              <p class="works__item-meta-label">担当・使用ツール</p>
-              <div class="works__item-meta">
-                <span class="works__tag works__tag--role">コーディング</span>
-                <span class="works__tag">HTML/CSS</span>
-                <span class="works__tag">WordPress</span>
-                <span class="works__tag">ACF</span>
-                <span class="works__tag">GSAP</span>
-                <span class="works__tag">レスポンシブ</span>
-              </div>
-              <p>
-                企業サイトとしての情報整理に加え、表現面にも挑戦した制作事例です。
 
-                基本的な構成やWordPress設計は他案件と同様ですが、
-                本案件では初めてパララックス表現やGSAPを用いたアニメーション実装に取り組みました。
-                動きを取り入れつつも、過度にならないよう表示速度や操作感を意識しています。
-
-                新しい技術についても、公式ドキュメントや実装例を調べながら導入し、
-                実務レベルで使用できる形に落とし込みました。
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="works__group works__group--design">
-        <h3 class="works__group-heading">デザイン</h3>
-        <div class="works__list works__list--design">
-          <article class="works__card">
-            <div class="works__item works__item--design">
-              <div class="works__item-img works__item-img--design">
-                <div class="works__design-visual" aria-describedby="design-lp-help">
-                  <p class="works__design-visual-label" id="design-lp-help">縦長のカンプ全体は、下の画像またはボタンからモーダルで開けます（スクロール可）</p>
-                  <div class="works__item-img-preview">
-                    <button type="button" class="works__design-btn works__design-btn--hero" data-modal-src="./assets/images/fuyutabi-cut.png" data-modal-alt="ピカピカレイン #ピカピカレイン冬旅 LPデザインカンプ" data-modal-label="冬旅" aria-describedby="design-lp-help" aria-label="冬旅のLPカンプ全体をモーダルで表示する">
-                      <img src="./assets/images/fuyutabi-cut.png" alt="" width="800" height="500" loading="lazy" decoding="async">
-                      <span class="works__design-btn-hero-caption">カンプ全体を見る</span>
-                    </button>
-                  </div>
-                  <div class="works__design-actions-block">
-                    <div class="works__design-actions" role="group" aria-labelledby="design-lp-actions-label">
-                      <button type="button" class="works__design-btn" data-modal-src="./assets/images/fuyutabi-cut.png" data-modal-alt="ピカピカレイン #ピカピカレイン冬旅 LPデザインカンプ" data-modal-label="冬旅">冬旅を表示</button>
-                      <button type="button" class="works__design-btn" data-modal-src="./assets/images/harutabi-cut.png" data-modal-alt="ピカピカレイン #ピカピカレイン春旅 LPデザインカンプ" data-modal-label="春旅">春旅を表示</button>
+        <div class="works__group works__group--design">
+          <h3 class="works__group-heading">デザイン</h3>
+          <div class="works__list works__list--design">
+            <article class="works__card">
+              <div class="works__item works__item--design">
+                <div class="works__item-img works__item-img--design">
+                  <div
+                    class="works__design-visual"
+                    aria-describedby="design-lp-help"
+                  >
+                    <p class="works__design-visual-label" id="design-lp-help">
+                      縦長のカンプ全体は、下の画像またはボタンからモーダルで開けます（スクロール可）
+                    </p>
+                    <div class="works__item-img-preview">
+                      <button
+                        type="button"
+                        class="works__design-btn works__design-btn--hero"
+                        data-modal-src="./assets/images/fuyutabi-cut.png"
+                        data-modal-alt="ピカピカレイン #ピカピカレイン冬旅 LPデザインカンプ"
+                        data-modal-label="冬旅"
+                        aria-describedby="design-lp-help"
+                        aria-label="冬旅のLPカンプ全体をモーダルで表示する"
+                      >
+                        <img
+                          src="./assets/images/fuyutabi-cut.png"
+                          alt=""
+                          width="800"
+                          height="500"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <span class="works__design-btn-hero-caption"
+                          >カンプ全体を見る</span
+                        >
+                      </button>
+                    </div>
+                    <div class="works__design-actions-block">
+                      <div
+                        class="works__design-actions"
+                        role="group"
+                        aria-labelledby="design-lp-actions-label"
+                      >
+                        <button
+                          type="button"
+                          class="works__design-btn"
+                          data-modal-src="./assets/images/fuyutabi-cut.png"
+                          data-modal-alt="ピカピカレイン #ピカピカレイン冬旅 LPデザインカンプ"
+                          data-modal-label="冬旅"
+                        >
+                          冬旅を表示
+                        </button>
+                        <button
+                          type="button"
+                          class="works__design-btn"
+                          data-modal-src="./assets/images/harutabi-cut.png"
+                          data-modal-alt="ピカピカレイン #ピカピカレイン春旅 LPデザインカンプ"
+                          data-modal-label="春旅"
+                        >
+                          春旅を表示
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="works__item-text">
-              <h4 class="works__item-title">SNSハッシュタグキャンペーン LPデザイン</h4>
-              <p class="works__item-meta-label">担当・使用ツール</p>
-              <div class="works__item-meta">
-                <span class="works__tag works__tag--role">デザイン</span>
-                <span class="works__tag">Photoshop</span>
-                <span class="works__tag">Illustrator</span>
-                <span class="works__tag">LP</span>
-                <span class="works__tag">SNSキャンペーン</span>
+              <div class="works__item-text">
+                <h4 class="works__item-title">
+                  SNSハッシュタグキャンペーン LPデザイン
+                </h4>
+                <p class="works__item-meta-label">担当・使用ツール</p>
+                <div class="works__item-meta">
+                  <span class="works__tag works__tag--role">デザイン</span>
+                  <span class="works__tag">Photoshop</span>
+                  <span class="works__tag">Illustrator</span>
+                  <span class="works__tag">LP</span>
+                  <span class="works__tag">SNSキャンペーン</span>
+                </div>
+                <p>
+                  自動車用品のEC事業に在籍していた際の案件です。Instagram・X（旧Twitter）向けハッシュタグキャンペーンのLPとして、認知拡大と運用の厚みを目的に制作しました。
+                </p>
+                <p>
+                  車を趣味とするアカウントは多い一方、事業側のPRがタイムライン上で十分に活きにくいという課題に対し、参加型で盛り上げる構成に。当選後はレビュー投稿まで促す流れも設計しました。季節ごとに約2年継続し、参加の規模は初回比でおおよそ3倍（約200%増）まで広がりました。季節違いのカンプ全体はモーダルからご覧いただけます。
+                </p>
               </div>
-              <p>
-                自動車用品のEC事業に在籍していた際の案件です。Instagram・X（旧Twitter）向けハッシュタグキャンペーンのLPとして、認知拡大と運用の厚みを目的に制作しました。
-              </p>
-              <p>
-                車を趣味とするアカウントは多い一方、事業側のPRがタイムライン上で十分に活きにくいという課題に対し、参加型で盛り上げる構成に。当選後はレビュー投稿まで促す流れも設計しました。季節ごとに約2年継続し、参加の規模は初回比でおおよそ3倍（約200%増）まで広がりました。季節違いのカンプ全体はモーダルからご覧いただけます。
-              </p>
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
-    <dialog class="works-modal" id="works-design-modal" aria-modal="true" aria-labelledby="works-modal-heading">
-      <div class="works-modal__chrome">
-        <h2 id="works-modal-heading" class="works-modal__title">デザインカンプ</h2>
-        <button type="button" class="works-modal__close" aria-label="モーダルを閉じる">&times;</button>
-      </div>
-      <div class="works-modal__body">
-        <img class="works-modal__img" src="" alt="">
-      </div>
-      <div class="works-modal__nav" role="group" aria-label="カンプの切り替え">
-        <button type="button" class="works-modal__nav-btn works-modal__prev" aria-label="前のカンプへ">前へ</button>
-        <p class="works-modal__step" aria-live="polite"><span class="works-modal__step-current">1</span> / <span class="works-modal__step-total">2</span><span class="works-modal__step-label"></span></p>
-        <button type="button" class="works-modal__nav-btn works-modal__next" aria-label="次のカンプへ">次へ</button>
-      </div>
-    </dialog>
-  </main>
+      </section>
+      <dialog
+        class="works-modal"
+        id="works-design-modal"
+        aria-modal="true"
+        aria-labelledby="works-modal-heading"
+      >
+        <div class="works-modal__chrome">
+          <h2 id="works-modal-heading" class="works-modal__title">
+            デザインカンプ
+          </h2>
+          <button
+            type="button"
+            class="works-modal__close"
+            aria-label="モーダルを閉じる"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="works-modal__body">
+          <img class="works-modal__img" src="" alt="" />
+        </div>
+        <div
+          class="works-modal__nav"
+          role="group"
+          aria-label="カンプの切り替え"
+        >
+          <button
+            type="button"
+            class="works-modal__nav-btn works-modal__prev"
+            aria-label="前のカンプへ"
+          >
+            前へ
+          </button>
+          <p class="works-modal__step" aria-live="polite">
+            <span class="works-modal__step-current">1</span> /
+            <span class="works-modal__step-total">2</span
+            ><span class="works-modal__step-label"></span>
+          </p>
+          <button
+            type="button"
+            class="works-modal__nav-btn works-modal__next"
+            aria-label="次のカンプへ"
+          >
+            次へ
+          </button>
+        </div>
+      </dialog>
+    </main>
 
-  <footer class="footer">
-    <div class="footer__inner">
-      <p class="footer__copy">&copy; 2026 山本妃夏</p>
-    </div>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="./assets/js/index.js"></script>
-</body>
-
+    <footer class="footer">
+      <div class="footer__inner">
+        <p class="footer__copy">&copy; 2026 山本妃夏</p>
+      </div>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
 </html>
